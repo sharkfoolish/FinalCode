@@ -7,17 +7,17 @@ const FinalCode = {
     record : '',
    
     judge : function(inputAnswer){
-        if (this.password == inputAnswer-0) {
+        if (inputAnswer-0 > this.Max-0 || inputAnswer-0 < this.Min-0 || !(isInt(inputAnswer-0))) {
+            error.innerHTML = '<div class="alert alert-danger" role="alert">輸入錯誤，只能輸入範圍內的正整數</div>';
+        } else if (this.password == inputAnswer-0) {
             alert("你花了" + this.number + "次，猜對答案" + this.password);
             this.rederRecord(inputAnswer, '正確');
-        }
-        else if (this.password > inputAnswer-0) {
+        } else if (this.password > inputAnswer-0) {
             this.rederRecord(inputAnswer, '錯誤');
             this.Min = inputAnswer;
             this.number+=1;
             this.setRangeAndProgress();
-        }
-        else if (this.password < inputAnswer-0){
+        } else if (this.password < inputAnswer-0){
             this.rederRecord(inputAnswer, '錯誤');
             this.Max = inputAnswer;
             this.number+=1;

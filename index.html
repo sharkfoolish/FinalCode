@@ -24,6 +24,7 @@
                     <label for="inputAnswerLabel" class="form-label" id='inputAnswerLabel'>請輸入一個0-100的數字</label>
                     <input type="text" class="form-control" id="inputAnswer" placeholder="請輸入答案">
                 </div>
+                <div class="mb-3" id="error"></div>
                 <div class="mb-3">
                     <button class="btn btn-success" type="button" onclick="submit()">送出</button>
                 </div>
@@ -53,6 +54,7 @@
 
     var progress = document.getElementById("progress");
     var inputAnswerLabel = document.getElementById("inputAnswerLabel");
+    var error = document.getElementById("error");
     var table = document.getElementById("table");
 
     FinalCode.setRangeAndProgress();
@@ -61,6 +63,9 @@
         FinalCode.judge( document.getElementById("inputAnswer").value );
         table.innerHTML = FinalCode.record
     };
-    
 
+    function isInt(n) {
+        return typeof n == 'number' && n % 1 == 0;
+    }
+    
 </script>
