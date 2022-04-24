@@ -48,9 +48,12 @@
 <script>
 
     var inputAnswerLabel = document.getElementById("inputAnswerLabel");
+    var table = document.getElementById("table");
+
 
     function submit(){
         FinalCode.judge( document.getElementById("inputAnswer").value );
+        table.innerHTML = FinalCode.record
     };
 
 </script>
