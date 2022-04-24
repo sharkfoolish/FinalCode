@@ -1,6 +1,6 @@
 const FinalCode = {
 
-    password : Math.floor((Math.random() * 98) + 1),
+    password : Math.floor((Math.random() * 99) + 1),
     Max : 100,
     Min : 0, 
     number : 1,
