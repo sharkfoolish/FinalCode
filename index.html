@@ -17,6 +17,10 @@
         <div class="row justify-content-center mb-2">
             <div class="col-lg-6">
                 <div class="mb-3">
+                    <label for="range" class="form-label">數字範圍</label>
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="mb-3">
                     <label for="inputAnswerLabel" class="form-label" id='inputAnswerLabel'>請輸入一個0-100的數字</label>
                     <input type="text" class="form-control" id="inputAnswer" placeholder="請輸入答案">
                 </div>
@@ -47,13 +51,16 @@
 
 <script>
 
+    var progress = document.getElementById("progress");
     var inputAnswerLabel = document.getElementById("inputAnswerLabel");
     var table = document.getElementById("table");
 
+    FinalCode.setRangeAndProgress();
 
     function submit(){
         FinalCode.judge( document.getElementById("inputAnswer").value );
         table.innerHTML = FinalCode.record
     };
+    
 
 </script>
